@@ -1,0 +1,5 @@
+server:
+  port: 8813
+logging:
+  level:
+    ROOT: TRACE

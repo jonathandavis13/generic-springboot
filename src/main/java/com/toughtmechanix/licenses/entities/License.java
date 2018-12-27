@@ -1,12 +1,43 @@
 package com.toughtmechanix.licenses.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name = "licenses")
 public class License {
 
+    @Id
+    @Column(name = "license_id", nullable = false)
     private String id;
+
+    @Column(name = "organization_id", nullable = false)
     private String organizationId;
+
+    @Column(name = "product_name", nullable = false)
     private String productName;
+
+    @Column(name = "license_types")
     private String licenseType;
+
+
+    private String comment;
+
+    public License withComment(String comment){
+        this.comment = comment;
+        return this;
+    }
+
+    public void setComment(String comment){
+        this.comment =comment;
+    }
+
+    public String getComment() {
+        return comment;
+    }
 
     public String getId() {
         return id;
